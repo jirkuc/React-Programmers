@@ -1,10 +1,11 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import rawData from "./data/programmers.json";
 import PageContainer from "./components/PageContainer/PageContainer";
 import Toggler from "./components/Toggler/Toggler";
 import ItemList from "./components/ItemList/ItemList";
 import ItemForm from "./components/ItemForm/ItemForm";
+import PlannerForm from "./components/PlannerForm/PlannerForm";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -18,6 +19,7 @@ const App = () => {
     name: "",
     level: "",
   });
+  const [programmersCapacity, setProgrammersCapacity] = useState(0);
 
   const handleChoose = (name) => {
     switch (name) {
@@ -59,8 +61,8 @@ const App = () => {
     validateData(updatedItem);
   };
 
-  const validateData = (dog) => {
-    const { name, level } = dog;
+  const validateData = (item) => {
+    const { name, level } = item;
     if (name.trim().length === 0 || level.trim().length === 0) {
       setValidForm(false);
     } else {
@@ -81,6 +83,29 @@ const App = () => {
     validateData(updatedItem);
   };
 
+  useEffect(() => {
+    let totalProgrammersCapacity = 0;
+    listOfItems.forEach((item) => {
+      switch (item.level) {
+        case "Junior": {
+          totalProgrammersCapacity += 100;
+          break;
+        }
+        case "Senior": {
+          totalProgrammersCapacity += 200;
+          break;
+        }
+        default:
+          break;
+      }
+    });
+    setProgrammersCapacity(totalProgrammersCapacity);
+  }, [listOfItems]);
+
+  useEffect(() => {
+    console.log(programmersCapacity);
+  }, [programmersCapacity]);
+
   return (
     <div className="App">
       <PageContainer>
@@ -96,6 +121,7 @@ const App = () => {
             onAdd={handleAdd}
             data={newItem}
           />
+          <PlannerForm data={programmersCapacity} />
         </main>
       </PageContainer>
     </div>
