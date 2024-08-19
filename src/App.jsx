@@ -3,9 +3,12 @@ import rawData from "./data/programmers.json";
 import PageContainer from "./components/PageContainer/PageContainer";
 import Toggler from "./components/Toggler/Toggler";
 import { useState } from "react";
+import ItemList from "./components/ItemList/ItemList";
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const [itemList, setItemList] = useState(rawData.programmers);
+
   const handleChoose = (name) => {
     switch (name) {
       case "list-of-programmers": {
@@ -20,6 +23,12 @@ const App = () => {
         break;
     }
   };
+
+  const handleDelete = (idToDelete) => {
+    const tempItemList = itemList.filter((item) => item.id !== idToDelete);
+    setItemList(tempItemList);
+  };
+
   return (
     <div className="App">
       <PageContainer>
@@ -28,7 +37,7 @@ const App = () => {
           <Toggler onChoose={handleChoose} active={activeTab} />
         </header>
         <main>
-          <p>bla</p>
+          <ItemList data={itemList} onDelete={handleDelete} />
         </main>
       </PageContainer>
     </div>

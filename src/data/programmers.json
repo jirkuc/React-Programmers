@@ -3,32 +3,32 @@
     {
       "id": 1,
       "name": "Matyáš Svátek",
-      "level": "junior"
+      "level": "Junior"
     },
     {
       "id": 2,
       "name": "Hana Dlouhá",
-      "level": "senior"
+      "level": "Senior"
     },
     {
       "id": 3,
       "name": "Justýna Nečasová",
-      "level": "senior"
+      "level": "Senior"
     },
     {
       "id": 4,
       "name": "Karel Hruboš",
-      "level": "junior"
+      "level": "Junior"
     },
     {
       "id": 5,
       "name": "Adalbert Plivník",
-      "level": "junior"
+      "level": "Junior"
     },
     {
       "id": 6,
       "name": "Michaela Málková",
-      "level": "senior"
+      "level": "Senior"
     }
   ]
 }
