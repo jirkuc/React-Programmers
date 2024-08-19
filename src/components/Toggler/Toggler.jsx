@@ -9,7 +9,7 @@ const Toggler = ({ onChoose, active }) => {
     <div className="page-toggler">
       <button
         className={`toggler-btn ${active === 1 ? "active" : ""}`}
-        name="list-of-programmers"
+        name="list-of-items"
         onClick={handleClick}
       >
         Seznam programátorů
