@@ -114,14 +114,18 @@ const App = () => {
           <Toggler onChoose={handleChoose} active={activeTab} />
         </header>
         <main>
-          <ItemList data={listOfItems} onDelete={handleDelete} />
-          <ItemForm
-            valid={validForm}
-            onChange={handleChange}
-            onAdd={handleAdd}
-            data={newItem}
-          />
-          <PlannerForm data={programmersCapacity} />
+          {activeTab === 1 && (
+            <>
+              <ItemList data={listOfItems} onDelete={handleDelete} />
+              <ItemForm
+                valid={validForm}
+                onChange={handleChange}
+                onAdd={handleAdd}
+                data={newItem}
+              />
+            </>
+          )}
+          {activeTab === 2 && <PlannerForm data={programmersCapacity} />}
         </main>
       </PageContainer>
     </div>
