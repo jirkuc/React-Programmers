@@ -1,0 +1,34 @@
+{
+  "programmers": [
+    {
+      "id": 1,
+      "name": "Matyáš Svátek",
+      "level": "junior"
+    },
+    {
+      "id": 2,
+      "name": "Hana Dlouhá",
+      "level": "senior"
+    },
+    {
+      "id": 3,
+      "name": "Justýna Nečasová",
+      "level": "senior"
+    },
+    {
+      "id": 4,
+      "name": "Karel Hruboš",
+      "level": "junior"
+    },
+    {
+      "id": 5,
+      "name": "Adalbert Plivník",
+      "level": "junior"
+    },
+    {
+      "id": 6,
+      "name": "Michaela Málková",
+      "level": "senior"
+    }
+  ]
+}
